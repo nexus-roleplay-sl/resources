@@ -30,10 +30,10 @@ return {
         progress = 'ox_lib',
         -- Set your context menu system below
         -- Available options are: 'lation_ui', 'ox_lib' & 'custom'
-        menu = 'ox_lib',
+        menu = 'lation_ui',
         -- Set your alert & input dialog system below
         -- Available options are: 'lation_ui', 'ox_lib' & 'custom'
-        dialogs = 'ox_lib',
+        dialogs = 'lation_ui',
         -- Do you want to hide player names in the group menu?
         -- If true, names will instead be replaced with their Player IDs
         -- If false it will display their character names as normal
@@ -72,18 +72,13 @@ return {
         -- Min is the earliest the ped is available (in 24hr format)
         -- Max is the latest the ped is available (in 24hr format)
         -- For example, if you want the ped only available during daytime set min = 6 & max = 21
-        hours = { min = 0, max = 24 },
+        hours = { min = 6, max = 21 },
         -- When a group owner selects "Start Diving", this is how long it takes
         -- (in seconds) to receive an assigned location on the map.
         cooldown = { min = 15, max = 30 },
         -- When a diving job is completed, do you want to display the "Continue Diving?"
         -- Dialog to the group owner? True if yes, false if no
         continue = true,
-        -- Optional: require owner + invited player to both be near the start ped location
-        -- when adding group members. True to enable, false to disable
-        addMemberDistCheck = false,
-        -- Optional: max group size (including owner). Set nil for no limit
-        groupLimit = nil,
     },
 
     ----------------------------------------------
@@ -212,8 +207,6 @@ return {
                 [4] = { item = 'ls_scuba_gear_3', price = 1000, icon = 'fas fa-lungs', level = 3, metadata = 100 },
                 [5] = { item = 'ls_scuba_gear_4', price = 2000, icon = 'fas fa-lungs', level = 4, metadata = 100 },
                 [6] = { item = 'ls_scuba_gear_5', price = 5000, icon = 'fas fa-lungs', level = 5, metadata = 100 },
-                [7] = { item = 'burger', price = 5, icon = 'fas fa-burger' },
-                [8] = { item = 'water', price = 5, icon = 'fas fa-glass-water' },
                 -- You can add or remove items as you wish
             }
         },
@@ -229,22 +222,22 @@ return {
                 -- item: item spawn name
                 -- price: how much item sells for
                 -- icon: icon for item
-                [1] = { item = 'ls_old_boot', price = 5, icon = 'fas fa-hand-holding-dollar' },
-                [2] = { item = 'ls_wood_plank', price = 5, icon = 'fas fa-hand-holding-dollar' },
-                [3] = { item = 'ls_rusted_padlock', price = 5, icon = 'fas fa-hand-holding-dollar' },
-                [4] = { item = 'ls_rusted_key', price = 5, icon = 'fas fa-hand-holding-dollar' },
-                [5] = { item = 'ls_rusted_gear', price = 5, icon = 'fas fa-hand-holding-dollar' },
-                [6] = { item = 'ls_seashell', price = 15, icon = 'fas fa-hand-holding-dollar' },
-                [7] = { item = 'ls_seaweed', price = 15, icon = 'fas fa-hand-holding-dollar' },
-                [8] = { item = 'ls_rusted_muffler', price = 15, icon = 'fas fa-hand-holding-dollar' },
-                [9] = { item = 'ls_broken_cd', price = 15, icon = 'fas fa-hand-holding-dollar' },
-                [10] = { item = 'ls_diving_goggles', price = 15, icon = 'fas fa-hand-holding-dollar' },
-                [11] = { item = 'ls_fishing_net', price = 25, icon = 'fas fa-hand-holding-dollar' },
-                [12] = { item = 'ls_old_camera', price = 25, icon = 'fas fa-hand-holding-dollar' },
-                [13] = { item = 'ls_military_helmet', price = 25, icon = 'fas fa-hand-holding-dollar' },
-                [14] = { item = 'ls_old_compass', price = 50, icon = 'fas fa-hand-holding-dollar' },
-                [15] = { item = 'ls_old_watch', price = 50, icon = 'fas fa-hand-holding-dollar' },
-                [16] = { item = 'ls_conch_shell', price = 50, icon = 'fas fa-hand-holding-dollar' },
+                [1] = { item = 'ls_old_boot', price = 15, icon = 'fas fa-hand-holding-dollar' },
+                [2] = { item = 'ls_wood_plank', price = 15, icon = 'fas fa-hand-holding-dollar' },
+                [3] = { item = 'ls_rusted_padlock', price = 15, icon = 'fas fa-hand-holding-dollar' },
+                [4] = { item = 'ls_rusted_key', price = 15, icon = 'fas fa-hand-holding-dollar' },
+                [5] = { item = 'ls_rusted_gear', price = 15, icon = 'fas fa-hand-holding-dollar' },
+                [6] = { item = 'ls_seashell', price = 45, icon = 'fas fa-hand-holding-dollar' },
+                [7] = { item = 'ls_seaweed', price = 45, icon = 'fas fa-hand-holding-dollar' },
+                [8] = { item = 'ls_rusted_muffler', price = 45, icon = 'fas fa-hand-holding-dollar' },
+                [9] = { item = 'ls_broken_cd', price = 45, icon = 'fas fa-hand-holding-dollar' },
+                [10] = { item = 'ls_diving_goggles', price = 45, icon = 'fas fa-hand-holding-dollar' },
+                [11] = { item = 'ls_fishing_net', price = 75, icon = 'fas fa-hand-holding-dollar' },
+                [12] = { item = 'ls_old_camera', price = 75, icon = 'fas fa-hand-holding-dollar' },
+                [13] = { item = 'ls_military_helmet', price = 75, icon = 'fas fa-hand-holding-dollar' },
+                [14] = { item = 'ls_old_compass', price = 150, icon = 'fas fa-hand-holding-dollar' },
+                [15] = { item = 'ls_old_watch', price = 150, icon = 'fas fa-hand-holding-dollar' },
+                [16] = { item = 'ls_conch_shell', price = 150, icon = 'fas fa-hand-holding-dollar' },
                 -- You can add or remove items as you wish
             }
         }
@@ -262,10 +255,10 @@ return {
         account = 'cash',
         -- Do you want to require payment for boat rentals?
         -- If not, set deposit = 0
-        deposit = 500,
+        deposit = 250,
         -- Do you want to refund some money when the boat is returned?
         -- If not, set returnDeposit = 0
-        returnDeposit = 250,
+        returnDeposit = 100,
         -- The script will spawn a random boat from the list below
         -- If you only want one boat, leave just one in the list
         models = { 'dinghy' },
